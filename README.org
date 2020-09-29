@@ -1,0 +1,55 @@
+#+TITLE: Python Selenium: Take a screenshot
+#+TAGS: cryptokasten, python, selenium, browser-automation
+#+PROPERTY: header-args:sh :session *shell python-selenium-take-screenshot sh* :results silent raw
+#+PROPERTY: header-args:python :session *shell python-selenium-take-screenshot python* :results silent raw
+#+OPTIONS: ^:nil
+
+[[https://github.com/cryptokasten][file:https://img.shields.io/badge/dynamic/json.svg?url=https://api.github.com/users/cryptokasten&label=Cryptokasten&query=$.public_repos]]
+
+** System environment
+
+- Python 3.7.0
+
+- geckodriver 0.24.0
+
+Python modules
+
+- selenium==3.141.0
+
+** Imports
+
+#+BEGIN_SRC python :tangle src/python_selenium_take_screenshot.py
+from selenium import webdriver
+#+END_SRC
+
+** Parameters
+
+#+BEGIN_SRC python :tangle src/python_selenium_take_screenshot.py
+URL = "https://wikipedia.org"
+#+END_SRC
+
+#+BEGIN_SRC python :tangle src/python_selenium_take_screenshot.py
+SCREENSHOT = "screenshot.png"
+#+END_SRC
+
+** Init driver
+
+#+BEGIN_SRC python :tangle src/python_selenium_take_screenshot.py
+driver = webdriver.Firefox()
+#+END_SRC
+
+** Get page
+
+#+BEGIN_SRC python :tangle src/python_selenium_take_screenshot.py
+driver.get(URL)
+#+END_SRC
+
+** Take a screenshot
+
+#+BEGIN_SRC python :tangle src/python_selenium_take_screenshot.py
+driver.save_screenshot(SCREENSHOT)
+#+END_SRC
+
+** References
+
+1. https://pythonspot.com/selenium-take-screenshot/
